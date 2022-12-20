@@ -1,0 +1,80 @@
+Source: haskell-regex-pcre
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Clint Adams <clint@debian.org>,
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends:
+ cdbs,
+ debhelper (>= 10),
+ ghc (>= 8),
+ ghc-prof,
+ haskell-devscripts (>= 0.13),
+ libpcre3-dev,
+ pkg-config,
+ libghc-regex-base-dev (>= 0.94),
+ libghc-regex-base-dev (<< 0.95),
+ libghc-regex-base-prof,
+Build-Depends-Indep: ghc-doc,
+ libghc-regex-base-doc,
+Standards-Version: 4.5.0
+Homepage: https://hackage.haskell.org/package/regex-pcre
+Vcs-Browser: https://salsa.debian.org/haskell-team/DHG_packages/tree/master/p/haskell-regex-pcre
+Vcs-Git: https://salsa.debian.org/haskell-team/DHG_packages.git [p/haskell-regex-pcre]
+
+Package: libghc-regex-pcre-dev
+Architecture: any
+Depends:
+ libpcre3-dev,
+ ${haskell:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ ${haskell:Recommends},
+Suggests:
+ ${haskell:Suggests},
+Provides:
+ ${haskell:Provides},
+Description: Perl-compatible regular expressions
+ A library containing the PCRE backend to accompany regex-base.
+ .
+ This package contains the libraries for use with GHC.
+
+Package: libghc-regex-pcre-prof
+Architecture: any
+Depends:
+ ${haskell:Depends},
+ ${misc:Depends},
+Recommends:
+ ${haskell:Recommends},
+Suggests:
+ ${haskell:Suggests},
+Provides:
+ ${haskell:Provides},
+Description: Perl-compatible regular expressions; profiling libraries
+ A library containing the PCRE backend to accompany regex-base.
+ .
+ This package contains additional profiling libraries which can be
+ used with ghc-prof.
+
+Package: libghc-regex-pcre-doc
+Architecture: all
+Section: doc
+Depends:
+ ${haskell:Depends},
+ ${misc:Depends},
+Recommends:
+ ${haskell:Recommends},
+Suggests:
+ ${haskell:Suggests},
+Conflicts:
+ haskell-regex-pcre-doc (<< 0.93.1-7),
+Provides:
+ ${haskell:Provides},
+Replaces:
+ haskell-regex-pcre-doc (<< 0.93.1-7),
+Description: Perl-compatible regular expressions; documentation
+ A library containing the PCRE backend to accompany regex-base.
+ .
+ This package contains the API documentation of the library.
